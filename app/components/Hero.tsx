@@ -31,7 +31,7 @@ export default function Hero() {
       
 
 
-      {/* Subtle mesh gradient overlay */}
+      {/* Subtle mesh gradient overlay */} 
       <motion.div 
         className="absolute inset-0 opacity-30"
         style={{
