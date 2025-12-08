@@ -1,11 +1,19 @@
 // app/layout.tsx
 import { ReactNode } from 'react';
 import type { Metadata } from 'next';
+import { Poppins } from 'next/font/google';
 import './globals.css';
 
+const poppins = Poppins({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '700'],
+  variable: '--font-poppins',
+  display: 'swap',
+});
+
 export const metadata: Metadata = {
-  title: 'Ulwan Ukail - Fullstack Web Developer',
-  description: 'Ulwan Ukail - Fullstack Web Developer. I turn caffeine into websites.',
+  title: 'Ulwan Ukail | Fullstack Developer',
+  description: 'Premium web development services. I build engaging, high-performance websites and applications.',
 };
 
 interface RootLayoutProps {
@@ -14,14 +22,8 @@ interface RootLayoutProps {
 
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
-    <html lang="en">
-      <head>
-        <link
-          href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-          rel="stylesheet"
-        />
-      </head>
-      <body className="font-poppins antialiased">
+    <html lang="en" className={poppins.variable}>
+      <body className="font-poppins antialiased bg-primary-bg text-text selection:bg-accent selection:text-primary-bg">
         {children}
       </body>
     </html>

@@ -13,6 +13,8 @@ module.exports = {
         'secondary-bg': '#1F1F1F',
         'accent': '#00E3A4',
         'accent-hover': '#00c994',
+        'text': '#FFFFFF',
+        'text-muted': '#A0A0A0',
       },
       fontFamily: {
         poppins: ['Poppins', 'sans-serif'],
