@@ -2,6 +2,7 @@
 'use client';
 import { motion } from 'framer-motion';
 import { CheckCircle2 } from 'lucide-react';
+import Image from 'next/image';
 
 const skills = [
     "Next.js & React", "TypeScript", "Tailwind CSS", "Node.js",
@@ -28,7 +29,7 @@ export default function About() {
 
                         <div className="space-y-6 text-text-muted text-lg leading-relaxed">
                             <p>
-                                I am <strong className="text-white">Ulwan Ukail</strong>, a passionate Fullstack Developer with a knack for building sleek, high-performing web applications.
+                                I am <strong className="text-white">Ulwan Ukail</strong> a passionate Fullstack Developer with a knack for building sleek, high-performing web applications.
                             </p>
                             <p>
                                 With a deep understanding of modern web technologies, I bridge the gap between complex backend logic and beautiful frontend design. My goal is simple: to create digital experiences that not only look amazing but also solve real business problems.
@@ -59,16 +60,33 @@ export default function About() {
                         <div className="relative aspect-square md:aspect-[4/5] rounded-2xl overflow-hidden bg-secondary-bg border border-white/10 group">
                             <div className="absolute inset-0 bg-gradient-to-br from-accent/20 to-transparent opacity-60 group-hover:opacity-80 transition-opacity" />
 
-                            {/* Abstract Tech Visualization since no photo provided yet */}
-                            <div className="absolute inset-0 flex flex-col items-center justify-center p-8">
-                                <div className="grid grid-cols-2 gap-4 w-full h-full opacity-30">
-                                    <div className="bg-white/10 rounded-lg animate-pulse" style={{ animationDelay: '0s' }} />
-                                    <div className="bg-white/5 rounded-lg animate-pulse" style={{ animationDelay: '0.2s' }} />
-                                    <div className="bg-white/5 rounded-lg animate-pulse" style={{ animationDelay: '0.4s' }} />
-                                    <div className="bg-accent/10 rounded-lg animate-pulse" style={{ animationDelay: '0.6s' }} />
-                                </div>
-                                <div className="absolute font-mono text-xs text-accent/50 bottom-8 right-8">
-                                    &lt;Developer /&gt;
+                            {/* Gemini Images Grid */}
+                            <div className="absolute inset-0 flex items-center justify-center p-6">
+                                <div className="grid grid-cols-2 gap-4 w-full h-full">
+                                    {[
+                                        '/images/Gemini_Generated_Image_6m73qd6m73qd6m73.png',
+                                        '/images/Gemini_Generated_Image_yvyc1vyvyc1vyvyc.png',
+                                        '/images/Gemini_Generated_Image_fc1zu2fc1zu2fc1z.png',
+                                        '/images/Gemini_Generated_Image_feqjqmfeqjqmfeqj.png',
+                                        
+                                    
+                                    ].map((imagePath, index) => (
+                                        <motion.div
+                                            key={index}
+                                            className="relative rounded-lg overflow-hidden border border-white/10 hover:border-accent/50 transition-all hover:scale-105"
+                                            initial={{ opacity: 0, scale: 0.8 }}
+                                            whileInView={{ opacity: 1, scale: 1 }}
+                                            transition={{ delay: index * 0.1, duration: 0.5 }}
+                                            viewport={{ once: true }}
+                                        >
+                                            <Image
+                                                src={imagePath}
+                                                alt={`Portfolio showcase ${index + 1}`}
+                                                fill
+                                                className="object-cover"
+                                            />
+                                        </motion.div>
+                                    ))}
                                 </div>
                             </div>
                         </div>

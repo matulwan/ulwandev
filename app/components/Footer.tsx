@@ -1,4 +1,3 @@
-// app/components/Footer.tsx
 'use client';
 import { motion } from 'framer-motion';
 
@@ -92,7 +91,7 @@ const QuickLinks = () => (
   >
     <h3 className="text-xl font-bold mb-4 text-white">Quick Links</h3>
     <ul className="space-y-2">
-      {['Home', 'Projects', 'Contact'].map((item) => (
+      {['Home','About', 'Services', 'Projects'].map((item) => (
         <li key={item}>
           <a
             href={`#${item.toLowerCase().replace(' ', '-')}`}
@@ -138,7 +137,7 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-secondary-bg pt-12 pb-6">
+    <footer id="footer" className="bg-secondary-bg pt-12 pb-6">
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
           <motion.div

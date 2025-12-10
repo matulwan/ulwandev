@@ -30,7 +30,7 @@ export default function Hero() {
   };
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden bg-primary-bg">
+    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden bg-primary-bg pt-24">
 
       {/* Dynamic Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -74,12 +74,6 @@ export default function Hero() {
           variants={staggerContainer}
           className="max-w-4xl mx-auto text-center"
         >
-          {/* Badge */}
-          <motion.div variants={fadeInUp} className="mb-6 flex justify-center">
-            <span className="px-4 py-1.5 rounded-full border border-accent/20 bg-accent/5 text-accent text-sm font-medium backdrop-blur-sm">
-              Available for Freelance & Contract
-            </span>
-          </motion.div>
 
           {/* Main Heading */}
           <motion.h1
@@ -135,7 +129,7 @@ export default function Hero() {
           >
             {[
               { label: "Years Experience", value: "3+" },
-              { label: "Projects Completed", value: "20+" },
+              { label: "Projects Completed", value: "10+" },
               { label: "Client Satisfaction", value: "100%" },
               { label: "Response Time", value: "< 24h" }
             ].map((stat, index) => (

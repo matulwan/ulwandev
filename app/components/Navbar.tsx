@@ -1,4 +1,3 @@
-// app/components/Navbar.tsx
 'use client';
 import { motion, useScroll, useMotionValueEvent } from 'framer-motion';
 import { useState } from 'react';
@@ -20,12 +19,12 @@ export default function Navbar() {
 
     useMotionValueEvent(scrollY, "change", (latest) => {
         const previous = scrollY.getPrevious() ?? 0;
-        if (latest > previous && latest > 150) {
+        if (latest > previous && latest > 100) {
             setHidden(true);
         } else {
             setHidden(false);
         }
-        setScrolled(latest > 50);
+        setScrolled(latest > 150);
     });
 
     return (
@@ -36,14 +35,14 @@ export default function Navbar() {
             }}
             animate={hidden ? "hidden" : "visible"}
             transition={{ duration: 0.35, ease: "easeInOut" }}
-            className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-primary-bg/80 backdrop-blur-md border-b border-white/5 py-4' : 'bg-transparent py-6'
+            className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-black/30 py-4' : 'bg-transparent py-6'
                 }`}
         >
             <div className="container mx-auto px-6 flex items-center justify-between">
 
                 {/* Logo */}
                 <a href="#" className="font-bold text-2xl tracking-tighter text-white">
-                    ukail<span className="text-accent">.</span>
+                    ulwandev<span className="text-accent">.</span>
                 </a>
 
                 {/* Desktop Menu */}
@@ -58,12 +57,7 @@ export default function Navbar() {
                             <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-accent transition-all duration-300 group-hover:w-full" />
                         </a>
                     ))}
-                    <a
-                        href="https://wa.me/60172052095"
-                        className="px-5 py-2 rounded-full border border-white/10 bg-white/5 hover:bg-white/10 hover:border-accent/50 text-white text-sm font-medium transition-all"
-                    >
-                        Let's Talk
-                    </a>
+
                 </div>
 
                 {/* Mobile Menu Button */}
