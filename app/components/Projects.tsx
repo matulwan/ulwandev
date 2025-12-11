@@ -46,6 +46,9 @@ const projects: Project[] = [
 export default function Projects() {
   return (
     <section id="projects" className="py-24 bg-secondary-bg relative overflow-hidden">
+      {/* Background decoration - Green line separator */}
+      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-accent/20 to-transparent"></div>
+
       {/* Background visual cues */}
       <div className="absolute top-0 right-0 w-1/3 h-full bg-primary-bg/5 skew-x-12 transform origin-top-right" />
 
@@ -66,7 +69,7 @@ export default function Projects() {
             </p>
           </div>
 
-          
+
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10">

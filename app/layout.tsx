@@ -12,7 +12,7 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: 'Ulwan Ukail | Fullstack Developer',
+  title: 'Ulwan | Web Services',
   description: 'Premium web development services. I build engaging, high-performance websites and applications.',
 };
 
