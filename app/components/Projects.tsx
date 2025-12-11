@@ -2,38 +2,44 @@
 'use client';
 import { motion } from 'framer-motion';
 import { ArrowUpRight, Github, ExternalLink, Folder } from 'lucide-react';
+import Image from 'next/image';
 
 interface Project {
   title: string;
   category: string;
   description: string;
   tags: string[];
+  image: string;
 }
 
 const projects: Project[] = [
   {
-    title: 'E-Commerce Platform',
-    category: 'Full Stack',
-    description: 'A modern shopping experience with seamless checkout and inventory management.',
-    tags: ['Next.js', 'Stripe', 'Tailwind'],
+    title: 'Laravel Dashboard',
+    category: 'Dashboard',
+    description: 'A sleek Laravel dashboard for real-time data monitoring and efficient user management.',
+    tags: ['Laravel', 'React', 'TypeScript'],
+    image: '/images/dashboard.png',
   },
   {
-    title: 'SaaS Dashboard',
-    category: 'Web App',
-    description: 'Real-time analytics dashboard for data visualization and team management.',
-    tags: ['React', 'TypeScript', 'Charts'],
+    title: 'Restaurant Landing Page',
+    category: 'Website',
+    description: 'A modern landing page for restaurant promotion and reservations info.',
+    tags: ['Next.js', 'TypeScript'],
+    image: '/images/restaurant1.png',
   },
   {
-    title: 'Portfolio V1',
-    category: 'Frontend',
-    description: 'Minimalist portfolio template designed for creatives and developers.',
-    tags: ['Framer Motion', 'Next.js'],
+    title: 'Barber Booking System',
+    category: 'Website Application',
+    description: 'A web app enabling users to book and manage barber appointments effortlessly',
+    tags: ['Laravel', 'Livewire', 'TailwindCSS'],
+    image: '/images/barber1.png',
   },
   {
     title: 'Travel Booking',
     category: 'UI/UX Design',
     description: 'Immersive travel booking interface with simplified user flow and booking engine.',
     tags: ['Figma', 'UI Design'],
+    image: '/images/travel.png',
   },
 ];
 
@@ -60,14 +66,7 @@ export default function Projects() {
             </p>
           </div>
 
-          <motion.a
-            href="https://github.com/ulwandev"
-            target="_blank"
-            whileHover={{ x: 5 }}
-            className="flex items-center gap-2 text-accent font-medium hover:text-white transition-colors"
-          >
-            View Github <ArrowUpRight className="w-5 h-5" />
-          </motion.a>
+          
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10">
@@ -80,28 +79,18 @@ export default function Projects() {
               viewport={{ once: true }}
               className="group"
             >
-              {/* Screenshot Placeholder Container */}
+              {/* Project Image Container */}
               <div className="relative aspect-video bg-primary-bg rounded-xl overflow-hidden mb-6 border border-white/5 group-hover:border-accent/30 transition-colors shadow-2xl">
+                {/* Project Image */}
+                <Image
+                  src={project.image}
+                  alt={project.title}
+                  fill
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+
                 {/* Floating overlay gradient */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60" />
-
-                {/* Placeholder Content */}
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="flex flex-col items-center gap-3 text-white/20 group-hover:text-accent/50 transition-colors">
-                    <Folder className="w-12 h-12" />
-                    <span className="text-sm font-medium uppercase tracking-widest">Project Screenshot</span>
-                  </div>
-                </div>
-
-                {/* Hover Overlay with Actions */}
-                <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4 backdrop-blur-sm">
-                  <button className="p-3 bg-white text-black rounded-full transform translate-y-4 group-hover:translate-y-0 transition-all duration-300 hover:scale-110">
-                    <ExternalLink className="w-5 h-5" />
-                  </button>
-                  <button className="p-3 bg-black/50 text-white border border-white/20 rounded-full transform translate-y-4 group-hover:translate-y-0 transition-all duration-300 delay-75 hover:scale-110 hover:bg-black">
-                    <Github className="w-5 h-5" />
-                  </button>
-                </div>
               </div>
 
               {/* Project Info */}

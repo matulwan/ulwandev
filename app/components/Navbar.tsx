@@ -1,6 +1,6 @@
 'use client';
 import { motion, useScroll, useMotionValueEvent } from 'framer-motion';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 
 const navLinks = [
@@ -21,11 +21,24 @@ export default function Navbar() {
         const previous = scrollY.getPrevious() ?? 0;
         if (latest > previous && latest > 100) {
             setHidden(true);
+            setIsOpen(false); // Close mobile menu when scrolling down
         } else {
             setHidden(false);
         }
         setScrolled(latest > 150);
     });
+
+    // Close mobile menu when scrolling
+    useEffect(() => {
+        const handleScroll = () => {
+            if (isOpen) {
+                setIsOpen(false);
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, [isOpen]);
 
     return (
         <motion.nav
@@ -35,7 +48,7 @@ export default function Navbar() {
             }}
             animate={hidden ? "hidden" : "visible"}
             transition={{ duration: 0.35, ease: "easeInOut" }}
-            className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-black/30 py-4' : 'bg-transparent py-6'
+            className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-primary-bg/95 backdrop-blur-lg py-4 shadow-lg' : 'bg-transparent py-6'
                 }`}
         >
             <div className="container mx-auto px-6 flex items-center justify-between">

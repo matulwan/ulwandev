@@ -110,7 +110,7 @@ export default function Hero() {
             </motion.a>
 
             <motion.a
-              href="https://wa.me/60172052095"
+              href="https://wa.me/60172052095?text=Hi%20Ulwan,%20I%20need%20a%20website"
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.02 }}

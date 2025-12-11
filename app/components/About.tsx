@@ -5,8 +5,7 @@ import { CheckCircle2 } from 'lucide-react';
 import Image from 'next/image';
 
 const skills = [
-    "Next.js & React", "TypeScript", "Tailwind CSS", "Node.js",
-    "Database Design", "API Integration", "UI/UX Design", "Performance Optimization"
+    "Laravel", "Next.js", "React", "TypeScript", "Node.js", "Bootstrap", "TailwindCSS", "MySQL", "SQLite", "Figma",
 ];
 
 export default function About() {
@@ -32,10 +31,10 @@ export default function About() {
                                 I am <strong className="text-white">Ulwan Ukail</strong> a passionate Fullstack Developer with a knack for building sleek, high-performing web applications.
                             </p>
                             <p>
-                                With a deep understanding of modern web technologies, I bridge the gap between complex backend logic and beautiful frontend design. My goal is simple: to create digital experiences that not only look amazing but also solve real business problems.
+                                With a deep understanding of modern web technologies, I bridge the gap between complex backend logic and beautiful frontend design. My goal is simple to create digital experiences that not only look amazing but also solve real business problems.
                             </p>
                             <p>
-                                Whether you need a custom SaaS platform, a high-converting landing page, or a complete brand overhaul, I bring technical expertise and creative vision to every project.
+                                Whether you need a custom SaaS platform, a high converting landing page, or a complete brand overhaul, I bring technical expertise and creative vision to every project.
                             </p>
                         </div>
 
